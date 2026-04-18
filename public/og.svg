@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none" font-family="'Outfit', system-ui, sans-serif">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fefaf4"/>
+      <stop offset="0.6" stop-color="#fef3e7"/>
+      <stop offset="1" stop-color="#fde5d4"/>
+    </linearGradient>
+
+    <!-- Plane wing gradients (same as dart.svg) -->
+    <linearGradient id="ogLeft" x1="0.5" y1="0" x2="0.2" y2="1">
+      <stop offset="0" stop-color="#fca5a5"/>
+      <stop offset="0.55" stop-color="#ef4444"/>
+      <stop offset="1" stop-color="#b91c1c"/>
+    </linearGradient>
+    <linearGradient id="ogRight" x1="0.5" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#ef4444"/>
+      <stop offset="0.5" stop-color="#c53030"/>
+      <stop offset="1" stop-color="#7f1d1d"/>
+    </linearGradient>
+
+    <filter id="ogShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="4" dy="8"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.28"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Soft decorative blobs -->
+  <circle cx="1050" cy="100" r="180" fill="#e0f2fe" opacity="0.5"/>
+  <circle cx="150" cy="540" r="140" fill="#fce7f3" opacity="0.4"/>
+
+  <!-- Monospace eyebrow label -->
+  <text x="100" y="175" font-family="'JetBrains Mono', monospace" font-size="22" fill="#9a8a75" letter-spacing="4">
+    LE CARNET DE MATEO
+  </text>
+
+  <!-- Main title -->
+  <text x="100" y="290" font-size="110" font-weight="800" fill="#1f1b15" letter-spacing="-2">
+    Avions en
+  </text>
+  <text x="100" y="405" font-size="110" font-weight="800" fill="#1f1b15" letter-spacing="-2">
+    Papier
+  </text>
+
+  <!-- Subtitle -->
+  <text x="100" y="470" font-size="28" fill="#5b5040" font-weight="400">
+    27 modèles à plier · Filtrés par difficulté et style de vol
+  </text>
+
+  <!-- Handwritten tagline -->
+  <text x="100" y="540" font-family="'Caveat', cursive" font-size="42" fill="#dc2626">
+    Deviens un as du pliage ✦
+  </text>
+
+  <!-- Paper airplane illustration (right side) -->
+  <g transform="translate(760, 100) scale(1.4)" filter="url(#ogShadow)">
+    <!-- Ground shadow ellipse -->
+    <ellipse cx="200" cy="295" rx="115" ry="9" fill="#1e293b" opacity="0.14" filter="none"/>
+
+    <!-- Left wing -->
+    <polygon points="340,70 49,193 90,250" fill="url(#ogLeft)"/>
+    <!-- Right wing -->
+    <polygon points="340,70 90,250 131,307" fill="url(#ogRight)"/>
+
+    <!-- Fuselage ridge highlight -->
+    <line x1="340" y1="70" x2="90" y2="250"
+          stroke="#fecaca" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+    <line x1="343" y1="72" x2="93" y2="252"
+          stroke="#7f1d1d" stroke-width="0.8" stroke-linecap="round" opacity="0.55"/>
+
+    <!-- Nose crease lines -->
+    <line x1="220" y1="114" x2="240" y2="145"
+          stroke="#7f1d1d" stroke-width="1" stroke-linecap="round" opacity="0.55"/>
+    <line x1="240" y1="145" x2="260" y2="180"
+          stroke="#450a0a" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+
+    <!-- Tail edges -->
+    <line x1="49" y1="193" x2="90" y2="250"
+          stroke="#7f1d1d" stroke-width="1.2" stroke-linecap="round" opacity="0.45"/>
+    <line x1="90" y1="250" x2="131" y2="307"
+          stroke="#450a0a" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+
+    <!-- Nose tip accent -->
+    <circle cx="340" cy="70" r="2.2" fill="#fff5f5" opacity="0.9"/>
+  </g>
+
+  <!-- Bottom-right corner mark -->
+  <g transform="translate(1060, 560)">
+    <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="16" fill="#9a8a75" letter-spacing="2" text-anchor="end">
+      FAIT AVEC MATEO · 8 ANS
+    </text>
+  </g>
+</svg>

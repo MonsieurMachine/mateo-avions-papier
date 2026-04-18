@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mateo-avions-papier.vercel.app/sitemap.xml
