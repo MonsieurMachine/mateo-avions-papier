@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" fill="none">
+  <!-- Narrow shape after all folds, now fold in half (top to bottom) -->
+  <polygon points="20,190 200,100 280,100 280,280 200,280" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <!-- Center horizontal line -->
+  <line x1="20" y1="190" x2="280" y2="190" stroke="#0ea5e9" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <!-- Folded layers -->
+  <polygon points="20,190 200,100 200,190" fill="#bae6fd" fill-opacity="0.4" stroke="#0ea5e9" stroke-width="1.5"/>
+  <polygon points="20,190 200,280 200,190" fill="#bae6fd" fill-opacity="0.4" stroke="#0ea5e9" stroke-width="1.5"/>
+  <!-- Arrow showing fold in half (top to bottom) -->
+  <path d="M240 120 C250 140 250 170 240 185" stroke="#ef4444" stroke-width="2.5" fill="none" marker-end="url(#arr7)"/>
+  <defs>
+    <marker id="arr7" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8" fill="#ef4444"/>
+    </marker>
+  </defs>
+  <text x="150" y="395" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#64748b">Plier en deux (haut vers bas)</text>
+</svg>
