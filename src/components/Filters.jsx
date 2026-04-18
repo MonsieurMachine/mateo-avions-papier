@@ -1,4 +1,6 @@
 import { difficulties, categories, ratingLabels } from "../data/airplanes";
+import ui from "../data/ui";
+import { useT } from "../context/LanguageContext";
 
 function FilterGroup({ title, children }) {
   return (
@@ -25,6 +27,14 @@ function Chip({ active, onClick, activeStyle, children, dimColor }) {
   );
 }
 
+const ratingColors = {
+  distance: "#10b981",
+  speed: "#f59e0b",
+  acrobatics: "#a855f7",
+  turning: "#3b82f6",
+  gliding: "#14b8a6",
+};
+
 export default function Filters({
   selectedDifficulty,
   setSelectedDifficulty,
@@ -37,26 +47,20 @@ export default function Filters({
   resetFilters,
   resultCount,
 }) {
+  const { t } = useT();
   const hasFilters = selectedDifficulty || selectedCategory || sortBy || onlyIllustrated;
-
-  const ratingColors = {
-    distance: "#10b981",
-    speed: "#f59e0b",
-    acrobatics: "#a855f7",
-    turning: "#3b82f6",
-    gliding: "#14b8a6",
-  };
+  const countKey = resultCount === 1 ? ui.planeCountOne : ui.planeCountMany;
 
   return (
     <aside className="bg-white rounded-2xl border border-ink-muted/15 shadow-sm p-6 lg:p-7">
       <div className="flex items-baseline justify-between mb-5">
-        <h2 className="font-display font-700 text-lg text-ink">Filtres</h2>
+        <h2 className="font-display font-700 text-lg text-ink">{t(ui.filtersTitle)}</h2>
         <span className="font-display font-600 text-sm text-ink-muted">
-          {resultCount} avion{resultCount !== 1 ? "s" : ""}
+          {t(countKey, { n: resultCount })}
         </span>
       </div>
 
-      <FilterGroup title="Difficulté">
+      <FilterGroup title={t(ui.filterDifficulty)}>
         {difficulties.map((diff) => {
           const active = selectedDifficulty === diff.id;
           return (
@@ -68,13 +72,13 @@ export default function Filters({
               onClick={() => setSelectedDifficulty(active ? null : diff.id)}
             >
               <span className="mr-1">{diff.emoji}</span>
-              {diff.label}
+              {t(ui[diff.uiKey])}
             </Chip>
           );
         })}
       </FilterGroup>
 
-      <FilterGroup title="Spécialité">
+      <FilterGroup title={t(ui.filterSpecialty)}>
         {categories.map((cat) => {
           const active = selectedCategory === cat.id;
           return (
@@ -85,14 +89,14 @@ export default function Filters({
               onClick={() => setSelectedCategory(active ? null : cat.id)}
             >
               <span className="mr-1">{cat.emoji}</span>
-              {cat.label}
+              {t(ui[cat.uiKey])}
             </Chip>
           );
         })}
       </FilterGroup>
 
-      <FilterGroup title="Trier par">
-        {Object.entries(ratingLabels).map(([key, { label, emoji }]) => {
+      <FilterGroup title={t(ui.filterSortBy)}>
+        {Object.entries(ratingLabels).map(([key, meta]) => {
           const active = sortBy === key;
           const color = ratingColors[key];
           return (
@@ -103,14 +107,14 @@ export default function Filters({
               dimColor={color}
               onClick={() => setSortBy(active ? null : key)}
             >
-              <span className="mr-1">{emoji}</span>
-              {label}
+              <span className="mr-1">{meta.emoji}</span>
+              {t(ui[meta.uiKey])}
             </Chip>
           );
         })}
       </FilterGroup>
 
-      <FilterGroup title="Options">
+      <FilterGroup title={t(ui.filterOptions)}>
         <Chip
           active={onlyIllustrated}
           activeStyle={{ backgroundColor: "#10b981", borderColor: "#10b981" }}
@@ -118,7 +122,7 @@ export default function Filters({
           onClick={() => setOnlyIllustrated(!onlyIllustrated)}
         >
           <span className="mr-1">🖼️</span>
-          Illustrés
+          {t(ui.filterIllustrated)}
         </Chip>
       </FilterGroup>
 
@@ -127,7 +131,7 @@ export default function Filters({
           onClick={resetFilters}
           className="mt-5 w-full py-2.5 text-sm font-body font-500 text-ink-muted hover:text-ink transition-colors cursor-pointer border border-ink-muted/20 rounded-lg hover:bg-ink-muted/5"
         >
-          Tout effacer
+          {t(ui.filterClearAll)}
         </button>
       )}
     </aside>

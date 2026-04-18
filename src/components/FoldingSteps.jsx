@@ -1,6 +1,9 @@
 import { useState, useEffect, useCallback } from "react";
+import { useT } from "../context/LanguageContext";
+import ui from "../data/ui";
 
 export default function FoldingSteps({ plane, steps, onBack, onComplete }) {
+  const { t } = useT();
   const [currentStep, setCurrentStep] = useState(0);
   const [imageStatus, setImageStatus] = useState("loading");
   const total = steps.length;
@@ -46,17 +49,16 @@ export default function FoldingSteps({ plane, steps, onBack, onComplete }) {
 
   return (
     <div className="flex flex-col min-h-[520px]">
-      {/* Header */}
       <div className="px-8 pt-6 pb-5 border-b border-ink-muted/10">
         <div className="flex items-center justify-between mb-4">
           <button
             onClick={onBack}
-            className="text-sm text-ink-muted hover:text-ink cursor-pointer font-body flex items-center gap-1"
+            className="text-sm text-ink-muted hover:text-ink cursor-pointer font-body"
           >
-            ← Retour
+            {t(ui.stepsBack)}
           </button>
           <span className="label-caps">
-            Étape {currentStep + 1} / {total}
+            {t(ui.stepsOf, { n: currentStep + 1, total })}
           </span>
         </div>
         <div className="w-full bg-ink-muted/10 rounded-full h-1.5 overflow-hidden">
@@ -67,12 +69,11 @@ export default function FoldingSteps({ plane, steps, onBack, onComplete }) {
         </div>
       </div>
 
-      {/* Step content */}
       <div className="flex-1 px-8 py-7 flex flex-col items-center justify-center text-center overflow-y-auto">
         {imageStatus !== "error" ? (
           <img
             src={imageUrl}
-            alt={`Étape ${step.step} - ${plane.name}`}
+            alt={`${t(ui.stepsOf, { n: currentStep + 1, total })} — ${t(plane.name)}`}
             onError={() => {
               if (imageUrl.endsWith(".jpg")) {
                 setImageUrl(`${basePath}.svg`);
@@ -92,20 +93,19 @@ export default function FoldingSteps({ plane, steps, onBack, onComplete }) {
         )}
 
         <p className="text-ink text-[15px] leading-relaxed max-w-md font-body">
-          {step.text}
+          {t(step.text)}
         </p>
 
         {step.tip && (
           <div className="mt-5 bg-accent/5 border-l-4 border-accent/40 rounded-r-xl px-5 py-4 max-w-md text-left">
             <p className="text-ink-light text-sm leading-relaxed">
-              <span className="font-hand text-accent text-base mr-1">Astuce :</span>
-              {step.tip}
+              <span className="font-hand text-accent text-base mr-1">{t(ui.stepsTipHeader)}</span>
+              {t(step.tip)}
             </p>
           </div>
         )}
       </div>
 
-      {/* Navigation */}
       <div className="px-8 py-5 border-t border-ink-muted/10 flex gap-3">
         <button
           onClick={goPrev}
@@ -116,7 +116,7 @@ export default function FoldingSteps({ plane, steps, onBack, onComplete }) {
               : "bg-ink-muted/10 text-ink hover:bg-ink-muted/15"
           }`}
         >
-          Précédent
+          {t(ui.stepsPrev)}
         </button>
         <button
           onClick={goNext}
@@ -124,7 +124,7 @@ export default function FoldingSteps({ plane, steps, onBack, onComplete }) {
             isLast ? "bg-easy hover:brightness-110" : "bg-accent hover:bg-accent-light"
           }`}
         >
-          {isLast ? "Terminé !" : "Suivant"}
+          {isLast ? t(ui.stepsDone) : t(ui.stepsNext)}
         </button>
       </div>
     </div>

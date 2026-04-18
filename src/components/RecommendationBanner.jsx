@@ -1,15 +1,18 @@
 import { useState } from "react";
 import airplanes from "../data/airplanes";
+import ui from "../data/ui";
+import { useT } from "../context/LanguageContext";
 
 const difficultyOrder = ["easy", "medium", "hard", "veryhard"];
-const difficultyLabels = {
-  easy: "faciles",
-  medium: "moyens",
-  hard: "difficiles",
-  veryhard: "très difficiles",
+const pluralKey = {
+  easy: "diffEasyPlural",
+  medium: "diffMediumPlural",
+  hard: "diffHardPlural",
+  veryhard: "diffVeryhardPlural",
 };
 
 export default function RecommendationBanner({ completedPlanes }) {
+  const { t } = useT();
   const [dismissed, setDismissed] = useState(false);
 
   if (dismissed) return null;
@@ -41,14 +44,13 @@ export default function RecommendationBanner({ completedPlanes }) {
       return idx > max ? idx : max;
     }, 0);
     const nextDiff = difficultyOrder[Math.min(currentMax + 1, 3)];
-    message = `Tu as l'air à l'aise ! Essaie un avion ${difficultyLabels[nextDiff]} pour te challenger.`;
+    message = t(ui.recoEasier, { level: t(ui[pluralKey[nextDiff]]) });
   } else if (harderCount >= 2) {
-    message =
-      "Continue comme ça ! Plus tu t'entraînes, plus les plis deviennent faciles.";
+    message = t(ui.recoHarder);
   }
 
   if (!message) {
-    message = `Tu as déjà construit ${entries.length} avions — continue l'aventure !`;
+    message = t(ui.recoDefault, { n: entries.length });
   }
 
   return (

@@ -7,6 +7,8 @@ import AirplaneDetail from "./components/AirplaneDetail";
 import CompletionFeedback from "./components/CompletionFeedback";
 import RecommendationBanner from "./components/RecommendationBanner";
 import { usePreferences } from "./context/PreferencesContext";
+import { useT } from "./context/LanguageContext";
+import ui from "./data/ui";
 import "./App.css";
 
 function App() {
@@ -17,6 +19,7 @@ function App() {
   const [onlyIllustrated, setOnlyIllustrated] = useState(false);
   const [completingPlane, setCompletingPlane] = useState(null);
   const { prefs, saveCompletion } = usePreferences();
+  const { t } = useT();
 
   const filteredPlanes = airplanes.filter((plane) => {
     if (selectedDifficulty && plane.difficulty !== selectedDifficulty) return false;
@@ -94,16 +97,16 @@ function App() {
             {sortedPlanes.length === 0 && (
               <div className="text-center py-20 bg-white/50 rounded-2xl border border-ink-muted/10">
                 <p className="font-display font-700 text-2xl text-ink">
-                  Aucun avion trouvé
+                  {t(ui.emptyTitle)}
                 </p>
                 <p className="text-ink-muted mt-3">
-                  Essaie de changer tes filtres.
+                  {t(ui.emptySubtitle)}
                 </p>
                 <button
                   onClick={resetFilters}
                   className="mt-6 px-6 py-3 bg-accent text-white rounded-lg font-display font-600 hover:bg-accent-light transition-colors cursor-pointer"
                 >
-                  Voir tous les avions
+                  {t(ui.emptyReset)}
                 </button>
               </div>
             )}
@@ -113,7 +116,7 @@ function App() {
 
       <footer className="border-t border-ink-muted/10 py-8 text-center mt-10">
         <p className="font-hand text-xl text-ink-muted">
-          Fait avec soin par Mateo & Papa
+          {t(ui.footerMade)}
         </p>
       </footer>
 
