@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" fill="none">
+  <defs>
+    <linearGradient id="falcon-lw" x1="0.5" y1="0" x2="0.2" y2="1">
+      <stop offset="0" stop-color="#fde68a"/>
+      <stop offset="0.55" stop-color="#a16207"/>
+      <stop offset="1" stop-color="#713f12"/>
+    </linearGradient>
+    <linearGradient id="falcon-rw" x1="0.5" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#a16207"/>
+      <stop offset="0.5" stop-color="#713f12"/>
+      <stop offset="1" stop-color="#451a03"/>
+    </linearGradient>
+    <filter id="falcon-sh" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="3" dy="5"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.35"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <ellipse cx="200" cy="295" rx="115" ry="9" fill="#1e293b" opacity="0.14"/>
+
+  <g filter="url(#falcon-sh)">
+    <polygon points="340,70 49,193 90,250" fill="url(#falcon-lw)"/>
+    <polygon points="340,70 90,250 131,307" fill="url(#falcon-rw)"/>
+
+    <line x1="340" y1="70" x2="90" y2="250" stroke="#fde68a" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+    <line x1="343" y1="72" x2="93" y2="252" stroke="#451a03" stroke-width="0.8" stroke-linecap="round" opacity="0.55"/>
+
+    <line x1="220" y1="114" x2="240" y2="145" stroke="#451a03" stroke-width="1" stroke-linecap="round" opacity="0.55"/>
+    <line x1="240" y1="145" x2="260" y2="180" stroke="#1c0701" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+
+    <line x1="49" y1="193" x2="90" y2="250" stroke="#451a03" stroke-width="1.2" stroke-linecap="round" opacity="0.45"/>
+    <line x1="90" y1="250" x2="131" y2="307" stroke="#1c0701" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+
+    <circle cx="340" cy="70" r="2.2" fill="#ffffff" opacity="0.9"/>
+
+    
+  </g>
+</svg>

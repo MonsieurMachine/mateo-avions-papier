@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" fill="none">
+  <defs>
+    <linearGradient id="stunt-plane-lw" x1="0.5" y1="0" x2="0.2" y2="1">
+      <stop offset="0" stop-color="#fbcfe8"/>
+      <stop offset="0.55" stop-color="#db2777"/>
+      <stop offset="1" stop-color="#9f1239"/>
+    </linearGradient>
+    <linearGradient id="stunt-plane-rw" x1="0.5" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#db2777"/>
+      <stop offset="0.5" stop-color="#9f1239"/>
+      <stop offset="1" stop-color="#500724"/>
+    </linearGradient>
+    <filter id="stunt-plane-sh" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="3" dy="5"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.35"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <ellipse cx="200" cy="295" rx="115" ry="9" fill="#1e293b" opacity="0.14"/>
+
+  <g filter="url(#stunt-plane-sh)">
+    <polygon points="325,115 70,190 125,235" fill="url(#stunt-plane-lw)"/>
+    <polygon points="325,115 125,235 185,290" fill="url(#stunt-plane-rw)"/>
+
+    <line x1="325" y1="115" x2="125" y2="235" stroke="#fbcfe8" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+    <line x1="328" y1="117" x2="128" y2="237" stroke="#500724" stroke-width="0.8" stroke-linecap="round" opacity="0.55"/>
+
+    <line x1="235" y1="145" x2="220" y2="170" stroke="#500724" stroke-width="1" stroke-linecap="round" opacity="0.55"/>
+    <line x1="220" y1="170" x2="200" y2="195" stroke="#2a0411" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+
+    <line x1="70" y1="190" x2="125" y2="235" stroke="#500724" stroke-width="1.2" stroke-linecap="round" opacity="0.45"/>
+    <line x1="125" y1="235" x2="185" y2="290" stroke="#2a0411" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+
+    <circle cx="325" cy="115" r="2.2" fill="#ffffff" opacity="0.9"/>
+
+    <line x1="275" y1="145" x2="265" y2="153" stroke="#fbcfe8" stroke-width="1.2" opacity="0.55" stroke-linecap="round"/><line x1="249" y1="160.6" x2="239" y2="168.6" stroke="#fbcfe8" stroke-width="1.2" opacity="0.55" stroke-linecap="round"/><line x1="223" y1="176.2" x2="213" y2="184.2" stroke="#fbcfe8" stroke-width="1.2" opacity="0.55" stroke-linecap="round"/><line x1="197" y1="191.8" x2="187" y2="199.8" stroke="#fbcfe8" stroke-width="1.2" opacity="0.55" stroke-linecap="round"/><line x1="171" y1="207.4" x2="161" y2="215.4" stroke="#fbcfe8" stroke-width="1.2" opacity="0.55" stroke-linecap="round"/>
+  </g>
+</svg>
