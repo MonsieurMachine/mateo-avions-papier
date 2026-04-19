@@ -1,16 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" fill="none">
-  <!-- Top half -->
-  <rect x="20" y="100" width="260" height="90" rx="2" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
-  <!-- Bottom half -->
-  <rect x="20" y="190" width="260" height="90" rx="2" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
-  <!-- Center horizontal fold line -->
-  <line x1="20" y1="190" x2="280" y2="190" stroke="#0ea5e9" stroke-width="2" stroke-dasharray="8 4"/>
-  <!-- Arrow showing fold direction (bottom to top) -->
-  <path d="M150 260 C130 240 130 210 150 195" stroke="#ef4444" stroke-width="2.5" fill="none" marker-end="url(#arrG)"/>
-  <defs>
-    <marker id="arrG" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-      <path d="M0,0 L8,4 L0,8" fill="#ef4444"/>
-    </marker>
-  </defs>
-  <text x="150" y="395" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0ea5e9">Plier en deux, puis d&#233;plier</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 400" fill="none" font-family="system-ui, -apple-system, sans-serif">
+<defs>
+  <filter id="ps" x="-10%" y="-10%" width="120%" height="120%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+    <feOffset dx="0" dy="3"/>
+    <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+    <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#6366f1"/>
+  </marker>
+  <marker id="arrT" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M 0 0 L 10 5 L 0 10 z" fill="#14b8a6"/>
+  </marker>
+  <linearGradient id="foldTri" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#fff7ed"/>
+    <stop offset="1" stop-color="#fed7aa" stop-opacity="0.7"/>
+  </linearGradient>
+</defs>
+
+<rect x="80" y="30" width="160" height="340" rx="3" fill="#fefaf4" stroke="#d6c9ae" stroke-width="1.5" filter="url(#ps)"/>
+<line x1="160" y1="30" x2="160" y2="370" stroke="#3b82f6" stroke-width="1.7" stroke-dasharray="5 3" stroke-linecap="round"/>
+<path d="M 100 195 Q 160 75 220 195" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" fill="none" marker-end="url(#arr)" />
+<text x="160" y="390" text-anchor="middle" font-size="12" fill="#78716c" letter-spacing="0.3">Plie en 2 dans la longueur</text>
 </svg>
