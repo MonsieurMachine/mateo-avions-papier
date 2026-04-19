@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 400" fill="none" font-family="system-ui, -apple-system, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 400" fill="none" font-family="system-ui,-apple-system,sans-serif">
 <defs>
   <filter id="ps" x="-10%" y="-10%" width="120%" height="120%">
     <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
@@ -16,10 +16,38 @@
     <stop offset="0" stop-color="#fff7ed"/>
     <stop offset="1" stop-color="#fed7aa" stop-opacity="0.7"/>
   </linearGradient>
+  <linearGradient id="bWingL" x1="0.5" y1="0" x2="0.2" y2="1">
+    <stop offset="0" stop-color="hsl(32, 50%, 58%)"/>
+    <stop offset="0.55" stop-color="hsl(32, 55%, 43%)"/>
+    <stop offset="1" stop-color="hsl(32, 60%, 28%)"/>
+  </linearGradient>
+  <linearGradient id="bWingR" x1="0.5" y1="0" x2="0.8" y2="1">
+    <stop offset="0" stop-color="hsl(32, 55%, 43%)"/>
+    <stop offset="0.5" stop-color="hsl(32, 60%, 32%)"/>
+    <stop offset="1" stop-color="hsl(32, 65%, 20%)"/>
+  </linearGradient>
 </defs>
 
-<rect x="80" y="30" width="160" height="340" rx="3" fill="#fefaf4" stroke="#d6c9ae" stroke-width="1.5" filter="url(#ps)"/>
-<line x1="160" y1="30" x2="160" y2="370" stroke="#a8a29e" stroke-width="1" stroke-dasharray="3 3" stroke-linecap="round" opacity="0.7"/>
-<text x="160" y="180" text-anchor="middle" font-size="48">🎯</text>
-<text x="160" y="230" text-anchor="middle" font-size="11" fill="#78716c">Rabats chaque aile vers le bas pour former les ailes…</text>
+<!-- Top half: plane profile with wing fold action -->
+<g transform="translate(0, -40) scale(0.78)">
+  <polygon points="40,215 105,135 290,135 290,295 40,295" fill="#fefaf4" stroke="#d6c9ae" stroke-width="1.3" filter="url(#ps)"/>
+  <line x1="40" y1="295" x2="290" y2="295" stroke="#a8a29e" stroke-width="1.2" stroke-dasharray="3 3" stroke-linecap="round" opacity="0.8"/>
+  <line x1="40" y1="215" x2="105" y2="135" stroke="#c4a07c" stroke-width="1" stroke-dasharray="2 2" opacity="0.7"/>
+  <!-- Wing fold line (valley) -->
+  <line x1="40" y1="215" x2="290" y2="215" stroke="#3b82f6" stroke-width="1.8" stroke-dasharray="5 3" stroke-linecap="round"/>
+  <polygon points="40,215 105,135 290,135 290,215" fill="#dbeafe" opacity="0.35"/>
+  <!-- Arrow folding wing down -->
+  <path d="M 220 150 Q 245 200 235 275" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" fill="none" marker-end="url(#arr)"/>
+</g>
+<text x="160" y="238" text-anchor="middle" font-size="11" fill="#5b5040" font-weight="500">Plie chaque aile vers le bas</text>
+
+<!-- Bottom half: final front view V -->
+<g transform="translate(70, 245) scale(0.55)">
+  <ellipse cx="160" cy="275" rx="100" ry="6" fill="#1e293b" opacity="0.13"/>
+  <polygon points="160,10 40,250 155,250" fill="url(#bWingL)"/>
+  <polygon points="160,10 165,250 280,250" fill="url(#bWingR)"/>
+  <line x1="160" y1="10" x2="160" y2="250" stroke="hsl(32,40%,80%)" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+  <circle cx="160" cy="10" r="3" fill="#fff5f5" opacity="0.9"/>
+</g>
+<text x="160" y="390" text-anchor="middle" font-size="13" fill="#0f766e" font-weight="700">Prêt à voler !</text>
 </svg>

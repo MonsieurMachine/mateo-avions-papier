@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 400" fill="none" font-family="system-ui, -apple-system, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 400" fill="none" font-family="system-ui,-apple-system,sans-serif">
 <defs>
   <filter id="ps" x="-10%" y="-10%" width="120%" height="120%">
     <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
@@ -16,15 +16,29 @@
     <stop offset="0" stop-color="#fff7ed"/>
     <stop offset="1" stop-color="#fed7aa" stop-opacity="0.7"/>
   </linearGradient>
+  <linearGradient id="bWingL" x1="0.5" y1="0" x2="0.2" y2="1">
+    <stop offset="0" stop-color="hsl(32, 50%, 58%)"/>
+    <stop offset="0.55" stop-color="hsl(32, 55%, 43%)"/>
+    <stop offset="1" stop-color="hsl(32, 60%, 28%)"/>
+  </linearGradient>
+  <linearGradient id="bWingR" x1="0.5" y1="0" x2="0.8" y2="1">
+    <stop offset="0" stop-color="hsl(32, 55%, 43%)"/>
+    <stop offset="0.5" stop-color="hsl(32, 60%, 32%)"/>
+    <stop offset="1" stop-color="hsl(32, 65%, 20%)"/>
+  </linearGradient>
 </defs>
 
-<rect x="80" y="30" width="160" height="340" rx="3" fill="#fefaf4" stroke="#d6c9ae" stroke-width="1.5" filter="url(#ps)"/>
+<!-- House-shape paper outline (peak at top) -->
+<polygon points="160,30 240,110 240,370 80,370 80,110" fill="#fefaf4" stroke="#d6c9ae" stroke-width="1.5" filter="url(#ps)"/>
 <line x1="160" y1="30" x2="160" y2="370" stroke="#a8a29e" stroke-width="1" stroke-dasharray="3 3" stroke-linecap="round" opacity="0.7"/>
-<polygon points="80,30 160,30 160,110" fill="url(#foldTri)" stroke="#c4a07c" stroke-width="1"/>
-<line x1="80" y1="30" x2="160" y2="110" stroke="#c4a07c" stroke-width="1"/>
-<polygon points="240,30 160,30 160,110" fill="url(#foldTri)" stroke="#c4a07c" stroke-width="1"/>
-<line x1="240" y1="30" x2="160" y2="110" stroke="#c4a07c" stroke-width="1"/>
-<line x1="80" y1="160" x2="240" y2="160" stroke="#3b82f6" stroke-width="1.7" stroke-dasharray="5 3" stroke-linecap="round"/>
-<path d="M 160 85 Q 180 130 160 175" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" fill="none" marker-end="url(#arr)" />
-<text x="160" y="390" text-anchor="middle" font-size="12" fill="#78716c" letter-spacing="0.3">Rabats la pointe vers le bas</text>
+<!-- Previous nose fold traces (faded) -->
+<line x1="80" y1="110" x2="160" y2="30" stroke="#c4a07c" stroke-width="1" opacity="0.6"/>
+<line x1="240" y1="110" x2="160" y2="30" stroke="#c4a07c" stroke-width="1" opacity="0.6"/>
+<!-- Horizontal valley fold line at y=90 (~6cm from top) -->
+<line x1="112" y1="90" x2="208" y2="90" stroke="#3b82f6" stroke-width="1.8" stroke-dasharray="5 3" stroke-linecap="round"/>
+<!-- Arrow showing peak going down -->
+<path d="M 160 40 Q 180 110 160 175" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" fill="none" marker-end="url(#arr)"/>
+<!-- Ghost of folded-down triangle (shows where the point lands) -->
+<polygon points="112,90 208,90 160,180" fill="#fed7aa" stroke="#c4a07c" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+<text x="160" y="390" text-anchor="middle" font-size="12" fill="#78716c">Rabats la pointe vers le bas (~5-6 cm du haut)</text>
 </svg>
