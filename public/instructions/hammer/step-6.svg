@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 400" fill="none" font-family="system-ui, -apple-system, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 400" fill="none" font-family="system-ui,-apple-system,sans-serif">
 <defs>
   <filter id="ps" x="-10%" y="-10%" width="120%" height="120%">
     <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
@@ -18,10 +18,11 @@
   </linearGradient>
 </defs>
 
-<rect x="80" y="30" width="160" height="340" rx="3" fill="#fefaf4" stroke="#d6c9ae" stroke-width="1.5" filter="url(#ps)"/>
-<line x1="160" y1="30" x2="160" y2="370" stroke="#a8a29e" stroke-width="1" stroke-dasharray="3 3" stroke-linecap="round" opacity="0.7"/>
-<polygon points="80,30 160,30 160,110" fill="url(#foldTri)" stroke="#c4a07c" stroke-width="1"/>
-<line x1="80" y1="30" x2="160" y2="110" stroke="#3b82f6" stroke-width="1.7" stroke-dasharray="5 3" stroke-linecap="round"/>
-<path d="M 95 50 Q 130 35 150 95" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" fill="none" marker-end="url(#arr)" />
-<text x="160" y="390" text-anchor="middle" font-size="12" fill="#78716c" letter-spacing="0.3">Coin haut-gauche → ligne centrale</text>
+<polygon points="80,70 240,70 240,370 80,370" fill="#fefaf4" stroke="#d6c9ae" stroke-width="1.5" filter="url(#ps)"/>
+<polygon points="112,70 208,70 160,115" fill="#fef3c7" opacity="0.5"/>
+<line x1="160" y1="70" x2="160" y2="370" stroke="#a8a29e" stroke-width="1" stroke-dasharray="3 3" stroke-linecap="round" opacity="0.7"/>
+<polygon points="80,70 160,70 160,150" fill="url(#foldTri)" stroke="#c4a07c" stroke-width="1.2"/>
+<line x1="80" y1="70" x2="160" y2="150" stroke="#3b82f6" stroke-width="1.7" stroke-dasharray="5 3" stroke-linecap="round"/>
+<path d="M 95 90 Q 130 85 150 135" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" fill="none" marker-end="url(#arr)" />
+<text x="160" y="390" text-anchor="middle" font-size="12" fill="#78716c">Nouveau coin haut-gauche → centre</text>
 </svg>
