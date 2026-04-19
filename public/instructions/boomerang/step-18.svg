@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 400" fill="none" font-family="system-ui, -apple-system, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 400" fill="none" font-family="system-ui,-apple-system,sans-serif">
 <defs>
   <filter id="ps" x="-10%" y="-10%" width="120%" height="120%">
     <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
@@ -18,8 +18,10 @@
   </linearGradient>
 </defs>
 
-<rect x="80" y="30" width="160" height="340" rx="3" fill="#fefaf4" stroke="#d6c9ae" stroke-width="1.5" filter="url(#ps)"/>
-<line x1="160" y1="30" x2="160" y2="370" stroke="#a8a29e" stroke-width="1" stroke-dasharray="3 3" stroke-linecap="round" opacity="0.7"/>
-<text x="160" y="150" text-anchor="middle" font-size="60">✋</text>
-<text x="160" y="230" text-anchor="middle" font-size="13" fill="#78716c">Appuie fort sur tous les plis</text>
+<g transform="translate(160, 200)">
+  <polygon points="-110,30 0,-30 110,30" fill="hsl(22, 85%, 55%)" stroke="hsl(22, 85%, 30%)" stroke-width="1.5"/>
+  <line x1="0" y1="-30" x2="0" y2="50" stroke="#dc2626" stroke-width="1" stroke-dasharray="3 2"/>
+</g>
+<text x="160" y="300" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="600">V OUVERT + SYMÉTRIQUE</text>
+<text x="160" y="390" text-anchor="middle" font-size="12" fill="#78716c">Vue de face — vérifie la symétrie</text>
 </svg>
