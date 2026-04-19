@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 400" fill="none" font-family="system-ui, -apple-system, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 400" fill="none" font-family="system-ui,-apple-system,sans-serif">
 <defs>
   <filter id="ps" x="-10%" y="-10%" width="120%" height="120%">
     <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
@@ -18,8 +18,11 @@
   </linearGradient>
 </defs>
 
-<rect x="80" y="30" width="160" height="340" rx="3" fill="#fefaf4" stroke="#d6c9ae" stroke-width="1.5" filter="url(#ps)"/>
-<line x1="160" y1="30" x2="160" y2="370" stroke="#3b82f6" stroke-width="1.7" stroke-dasharray="5 3" stroke-linecap="round"/>
-<path d="M 100 195 Q 160 75 220 195" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" fill="none" marker-end="url(#arr)" />
-<text x="160" y="390" text-anchor="middle" font-size="12" fill="#78716c" letter-spacing="0.3">Plie en 2 dans la longueur</text>
+<polygon points="160,30 240,110 240,370 80,370 80,110" fill="#fefaf4" stroke="#d6c9ae" stroke-width="1.5" filter="url(#ps)"/>
+<line x1="160" y1="30" x2="160" y2="370" stroke="#a8a29e" stroke-width="1" stroke-dasharray="3 3" stroke-linecap="round" opacity="0.7"/>
+<line x1="80" y1="110" x2="160" y2="30" stroke="#c4a07c" stroke-width="1" stroke-dasharray="2 2" stroke-linecap="round" opacity="0.7"/>
+<line x1="240" y1="110" x2="160" y2="30" stroke="#c4a07c" stroke-width="1" stroke-dasharray="2 2" stroke-linecap="round" opacity="0.7"/>
+<line x1="160" y1="30" x2="160" y2="370" stroke="#dc2626" stroke-width="2" stroke-dasharray="8 3 2 3" stroke-linecap="round"/>
+<path d="M 200 240 Q 240 200 200 160" stroke="#6366f1" stroke-width="2.5" stroke-linecap="round" fill="none" marker-end="url(#arr)" />
+<text x="160" y="390" text-anchor="middle" font-size="12" fill="#78716c">Plie en 2 — triangles à l'intérieur</text>
 </svg>
