@@ -1,40 +1,53 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" fill="none">
   <defs>
-    <linearGradient id="bulldog-lw" x1="0.5" y1="0" x2="0.2" y2="1">
-      <stop offset="0" stop-color="#fde68a"/>
-      <stop offset="0.55" stop-color="#d97706"/>
-      <stop offset="1" stop-color="#92400e"/>
+    <linearGradient id="bulldog-back" x1="0.3" y1="0.2" x2="0.1" y2="0.9">
+      <stop offset="0" stop-color="hsl(32, 44%, 48%)"/>
+      <stop offset="1" stop-color="hsl(32, 50%, 38%)"/>
     </linearGradient>
-    <linearGradient id="bulldog-rw" x1="0.5" y1="0" x2="0.8" y2="1">
-      <stop offset="0" stop-color="#d97706"/>
-      <stop offset="0.5" stop-color="#92400e"/>
-      <stop offset="1" stop-color="#451a03"/>
+    <linearGradient id="bulldog-fuselage" x1="0.4" y1="0" x2="0.1" y2="1">
+      <stop offset="0" stop-color="hsl(32, 50%, 38%)"/>
+      <stop offset="1" stop-color="hsl(32, 52%, 30%)"/>
+    </linearGradient>
+    <linearGradient id="bulldog-front" x1="0.6" y1="0" x2="0.3" y2="1">
+      <stop offset="0" stop-color="hsl(32, 17%, 92%)"/>
+      <stop offset="0.45" stop-color="hsl(32, 22%, 82%)"/>
+      <stop offset="1" stop-color="hsl(32, 33%, 68%)"/>
     </linearGradient>
     <filter id="bulldog-sh" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
-      <feOffset dx="3" dy="5"/>
-      <feComponentTransfer><feFuncA type="linear" slope="0.35"/></feComponentTransfer>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3.5"/>
+      <feOffset dx="2" dy="5"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.3"/></feComponentTransfer>
       <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
 
-  <ellipse cx="200" cy="295" rx="115" ry="9" fill="#1e293b" opacity="0.14"/>
+  <ellipse cx="200" cy="300" rx="115" ry="8" fill="hsl(32, 25%, 18%)" opacity="0.18"/>
 
   <g filter="url(#bulldog-sh)">
-    <polygon points="335,85 55,200 100,250" fill="url(#bulldog-lw)"/>
-    <polygon points="335,85 100,250 145,305" fill="url(#bulldog-rw)"/>
+    <!-- Back wing: nose → backTail → fuselageInner (upper portion, darker) -->
+    <polygon points="335,90 55,180 100,225" fill="url(#bulldog-back)"/>
 
-    <line x1="335" y1="85" x2="100" y2="250" stroke="#fde68a" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
-    <line x1="338" y1="87" x2="103" y2="252" stroke="#451a03" stroke-width="0.8" stroke-linecap="round" opacity="0.55"/>
+    <!-- Fuselage strip: nose → fuselageInner → frontInner (thin dark edge) -->
+    <polygon points="335,90 100,225 110,245" fill="url(#bulldog-fuselage)"/>
 
-    <line x1="230" y1="125" x2="250" y2="150" stroke="#451a03" stroke-width="1" stroke-linecap="round" opacity="0.55"/>
-    <line x1="250" y1="150" x2="265" y2="185" stroke="#1c0701" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+    <!-- Front wing: nose → frontInner → frontTail (lower portion, lightest) -->
+    <polygon points="335,90 110,245 95,290" fill="url(#bulldog-front)"/>
 
-    <line x1="55" y1="200" x2="100" y2="250" stroke="#451a03" stroke-width="1.2" stroke-linecap="round" opacity="0.45"/>
-    <line x1="100" y1="250" x2="145" y2="305" stroke="#1c0701" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+    <!-- Leading edge highlight (nose to backTail) — catches light -->
+    <line x1="335" y1="90" x2="55" y2="180" stroke="hsl(32, 17%, 92%)" stroke-width="1.3" stroke-linecap="round" opacity="0.5"/>
 
-    <circle cx="335" cy="85" r="2.2" fill="#ffffff" opacity="0.9"/>
+    <!-- Ridge line between back wing and fuselage (paper fold cue) -->
+    <line x1="335" y1="90" x2="100" y2="225" stroke="hsl(32, 52%, 30%)" stroke-width="1" stroke-linecap="round" opacity="0.75"/>
 
-    <polygon points="335,85 313,99 329,103" fill="#1c0701" opacity="0.55"/>
+    <!-- Ridge line between fuselage and front wing -->
+    <line x1="335" y1="90" x2="110" y2="245" stroke="hsl(32, 50%, 38%)" stroke-width="0.8" stroke-linecap="round" opacity="0.6"/>
+
+    <!-- Trailing edge of front wing (tail) -->
+    <line x1="110" y1="245" x2="95" y2="290" stroke="hsl(32, 52%, 30%)" stroke-width="1.2" stroke-linecap="round" opacity="0.45"/>
+
+    <!-- Nose tip highlight -->
+    <circle cx="335" cy="90" r="2.5" fill="hsl(32, 17%, 92%)" opacity="0.9"/>
+
+    <polygon points="335,90 317,98 325,110" fill="hsl(32, 50%, 38%)" opacity="0.75"/>
   </g>
 </svg>
